@@ -59,6 +59,7 @@
     <Compile Include="DataConversion.xaml.cs">
       <DependentUpon>DataConversion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DisplayData.cs" />
     <Compile Include="ValueConverter.cs" />
     <Page Include="DataConversion.xaml">
       <SubType>Designer</SubType>
