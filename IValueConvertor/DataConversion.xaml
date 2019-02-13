@@ -1,0 +1,26 @@
+﻿<Window x:Class="IValueConvertor.DataConversion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mylocalXAMLnamespace="clr-namespace:IValueConvertor"
+        mc:Ignorable="d"
+        Title="DataConversion" Height="450" Width="800">
+    <StackPanel>
+        <StackPanel.Resources>
+            <mylocalXAMLnamespace:AddConverter x:Key="XAMLResourceAddConverter" />
+        </StackPanel.Resources>
+
+        <TextBox Name="TextBox1" Text="10"></TextBox>
+        <TextBox Name="TextBox2" Text="20"></TextBox>
+        <Label Content="Sum of above two values:"></Label>
+        <TextBox Name="textBox3">
+            <TextBox.Text>
+                <MultiBinding Converter="{StaticResource XAMLResourceAddConverter}">
+                    <Binding ElementName="TextBox1" Path="Text"/>
+                    <Binding ElementName="TextBox2" Path="Text"/>
+                </MultiBinding>
+            </TextBox.Text>
+        </TextBox>
+    </StackPanel>
+</Window>
